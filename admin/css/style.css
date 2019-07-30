@@ -1,0 +1,9 @@
+
+
+
+input[type=checkbox] {
+  visibility: visible;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}

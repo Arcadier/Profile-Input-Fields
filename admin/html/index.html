@@ -6,40 +6,25 @@
     <meta https-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User Custom Fields</title>
-    <!-- core js -->
-    <!-- <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.js"></script> -->
-    <!-- bootstrap js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/bootstrap.min.js"></script>
-    <!-- nicescroll js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.nicescroll.min.js"></script>
-    <!-- Moment js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/moment.min.js"></script>
-    <!-- bootbox js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/bootbox.min.js"></script>
-    <!-- tablesorter js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.tablesorter.js"></script>
-    <!-- html5upload js -->
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/html5imageupload.min.js"></script>
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/sol.js"></script>
-    <!-- custom js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/custom.js"></script>
-    <!-- bootstrap style -->
     <script type="text/javascript" src="scripts/scripts1.js"></script>
     <link href="https://bootstrap.arcadier.com/adminportal/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="https://bootstrap.arcadier.com/adminportal/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link href="https://bootstrap.arcadier.com/adminportal/css/html5imageupload.css" rel="stylesheet" type="text/css">
     <link href="https://bootstrap.arcadier.com/adminportal/css/switch-btn.css" rel="stylesheet" type="text/css">
-    <!-- fancy-radio style -->
     <link href="https://bootstrap.arcadier.com/adminportal/css/fancy-radio.css" rel="stylesheet" type="text/css" />
-    <!-- custom style-->
     <link href="https://bootstrap.arcadier.com/adminportal/css/sol.css" rel="stylesheet" type="text/css">
     <link href="https://bootstrap.arcadier.com/adminportal/css/style.css" rel="stylesheet" type="text/css">
-
     <link href="https://bootstrap.arcadier.com/adminportal/css/sidemenu.css" rel="stylesheet" type="text/css"
         media="screen,print">
-    <!-- responsive style-->
     <link href="https://bootstrap.arcadier.com/adminportal/css/responsive.css" rel="stylesheet" type="text/css">
     <link href="css/adminstyle.css" rel="stylesheet" type="text/css">
     <link href="css/user-custom-fields.css" rel="stylesheet" type="text/css">
@@ -77,17 +62,17 @@
                         <div class="page-content-top field-icon">
                             <div><i class="icon icon-3x field-icon-big"></i></div>
                             <div>
-                                <p>Get more information about your user with custom fields</p>
+                                <p>Get more information about your users with profile input fields</p>
                             </div>
                             <div class="form-element custom-code">
-                                <button type="button" onclick="saveDeliveryRate();addRow(totalRows,'','','',true)" class="bl_btn">Add Custom Code</button>
+                                <button type="button" onclick="saveDeliveryRate();addRow(totalRows,'','','',true)" class="bl_btn">Add Input Field</button>
                             </div>
                             
                     </div>
                 <div class="panel-box ">
                             <div class="custom-field-infos">
                                 <!-- <h2>Custom field details<i class="icon icon-3x field-arrow-icon-big"></i></h2> -->
-                                <h2>Custom field details<span class="up"><img src="./images/chevron_black_up.svg" alt="" title=""></span></h2>
+                                <h2>Profile Input fields details<span class="up"><img src="./images/chevron_black_up.svg" alt="" title=""></span></h2>
                                 <div class="custom-field-control">
                                     <div class="custom-field-containers">
                                         <label class="custom-field-title">Text:</label>
@@ -103,7 +88,7 @@
                                     </div>
                                     <div class="custom-field-containers">
                                         <label class="custom-field-title">Dropdown:</label>
-                                        <span class="custom-field-description">The users will be able to pick from a list in Dropdown<br>Enter in the values for the Dropdown separated by commas</span>
+                                        <span class="custom-field-description">To enter values for checkboxes and dropdown lists, separate them with commas.<br>For example, to include 3 different values on the list you should type:<br>Red, Blue, Green</span>
                                     </div>
                             </div>          
                         </div>
@@ -118,7 +103,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Type</th>
-                                        <th>Dropdown Options</th> 
+                                        <th>Options</th> 
                                         <th style="padding-left:10px;">Enable</th>
                                     </tr>
                                 </thead>

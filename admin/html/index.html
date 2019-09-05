@@ -1,32 +1,922 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script src="$4ivscripts/scripts.js" charset="utf-8"></script>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 
-    <title>Custom Fields</title>
-  </head>
-  <body>
-    <link rel="stylesheet" href="css/style.css">
-    <div class="allShit">
-      <div class="header">
-        <h1>Custom Fields</h1>
-      </div>
-      <div class="button">
-        <button type="button" id="add">Add Custom Field</button>
-      </div>
-      <div class="mainBody">
+<head>
+    <meta https-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Custom Fields</title>
+    <!-- core js -->
+    <!-- <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.js"></script> -->
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/bootstrap.min.js"></script>
+    <!-- nicescroll js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.nicescroll.min.js"></script>
+    <!-- Moment js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/moment.min.js"></script>
+    <!-- bootbox js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/bootbox.min.js"></script>
+    <!-- tablesorter js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/jquery.tablesorter.js"></script>
+    <!-- html5upload js -->
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/html5imageupload.min.js"></script>
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/sol.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/custom.js"></script>
+    <!-- bootstrap style -->
+    <script type="text/javascript" src="scripts/scripts1.js"></script>
+    <link href="https://bootstrap.arcadier.com/adminportal/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://bootstrap.arcadier.com/adminportal/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="https://bootstrap.arcadier.com/adminportal/css/html5imageupload.css" rel="stylesheet" type="text/css">
+    <link href="https://bootstrap.arcadier.com/adminportal/css/switch-btn.css" rel="stylesheet" type="text/css">
+    <!-- fancy-radio style -->
+    <link href="https://bootstrap.arcadier.com/adminportal/css/fancy-radio.css" rel="stylesheet" type="text/css" />
+    <!-- custom style-->
+    <link href="https://bootstrap.arcadier.com/adminportal/css/sol.css" rel="stylesheet" type="text/css">
+    <link href="https://bootstrap.arcadier.com/adminportal/css/style.css" rel="stylesheet" type="text/css">
 
-        <table id="CFTable" class="maintable" border="2px">
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Enable</th>
-            <th>Dropdown Options</th>
-          </tr>
-        </table>
-      </div>
+    <link href="https://bootstrap.arcadier.com/adminportal/css/sidemenu.css" rel="stylesheet" type="text/css"
+        media="screen,print">
+    <!-- responsive style-->
+    <link href="https://bootstrap.arcadier.com/adminportal/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="css/adminstyle.css" rel="stylesheet" type="text/css">
+    <link href="css/user-custom-fields.css" rel="stylesheet" type="text/css">
+    <link href="css/checkbox.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+.consumer-box{
+    padding-top: 20px;
+    border-top: 1px solid #d9d9d9;
+    margin-top: 15px;
+}</style>
+</head>
+<body>
+<div class="page-merchant page-user-custom-fields">
+    <div class="mobi-header visible-xs">
+        <div class="container">
+            <div class="pull-left">
+                <div class="brand-logo"><a href="#"><img alt="logo"
+                            src="https://bootstrap.arcadier.com/adminportal/images/brand-logo.png"></a></div>
+            </div>
+            <div class="pull-right">
+                <button type="button" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
+    <div class="main">
+        
+        <div class="col-sm main-content">
+            
+            <div class="page-content page-layout">
+                <div class="gutter-wrapper">
+                    <div class="panel-box ">
+                        <div class="page-content-top field-icon">
+                            <div><i class="icon icon-3x field-icon-big"></i></div>
+                            <div>
+                                <p>Get more information about your user with custom fields</p>
+                            </div>
+                            <div class="form-element custom-code">
+                                <button type="button" onclick="saveDeliveryRate();addRow(totalRows,'','','',true)" class="bl_btn">Add Custom Code</button>
+                            </div>
+                            
+                    </div>
+                <div class="panel-box ">
+                            <div class="custom-field-infos">
+                                <!-- <h2>Custom field details<i class="icon icon-3x field-arrow-icon-big"></i></h2> -->
+                                <h2>Custom field details<span class="up"><img src="./images/chevron_black_up.svg" alt="" title=""></span></h2>
+                                <div class="custom-field-control">
+                                    <div class="custom-field-containers">
+                                        <label class="custom-field-title">Text:</label>
+                                        <span class="custom-field-description">The users can only enter text</span>
+                                    </div>
+                                    <div class="custom-field-containers">
+                                        <label class="custom-field-title">Number:</label>
+                                        <span class="custom-field-description">The users will only be able to enter in a number</span>
+                                    </div>
+                                    <div class="custom-field-containers">
+                                        <label class="custom-field-title">Checkbox:</label>
+                                        <span class="custom-field-description">The users will be able to check a Checkbox</span>
+                                    </div>
+                                    <div class="custom-field-containers">
+                                        <label class="custom-field-title">Dropdown:</label>
+                                        <span class="custom-field-description">The users will be able to pick from a list in Dropdown<br>Enter in the values for the Dropdown separated by commas</span>
+                                    </div>
+                            </div>          
+                        </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
 
-  </body>
+                <div class="panel-box ">
+                       <div class="page-content-pagination-page">
+                        <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Dropdown Options</th> 
+                                        <th style="padding-left:10px;">Enable</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="user-custom-field">
+                                    
+                        
+                                </tbody>
+                            </table>
+                </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="popup  popup-area popup-delete-confirm " id="DeleteCustomMethod">
+
+                <div class="wrapper"> <a href="javascript:;" class="close-popup"><img src="images/cross-icon.svg"></a>
+
+                    <div class="content-area">
+
+                    <p>Are you sure you want to delete this?</p>
+
+                    </div>
+
+                    <div class="btn-area text-center smaller">
+
+                    <input  type="button" value="Cancel" class="btn-black-mdx " id="popup_btncancel">
+
+                    <input id="popup_btnconfirm" type="button" value="Okay" class="my-btn btn-blue">
+
+                    <div class="clearfix"></div>
+
+                    </div>
+
+                </div>
+
+                </div>
+                                   
+
+                    <div class="modal fade model-img-crop" id="myModalLogo" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="modaldialogLogo" class="html5imageupload" data-download="true"
+                                        data-save="false" data-resize="true" data-width="1280" data-height="600"
+                                        data-url="canvas.php" style="width: 100%;">
+                                        <input type="file" name="thumb" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade model-img-crop-background" id="myModalBackground" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="modaldialogBackground" class="html5imageupload" data-download="true"
+                                        data-save="false" data-resize="true" data-width="1280" data-height="600"
+                                        data-url="canvas.php" style="width: 100%;">
+                                        <input type="file" name="thumb" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="InviteBuyer" class="popup popup-demo-seller in">
+                        <div class="popup-wrapper">
+                            <div class="popup-body">Invite your buyers to onboard on your private marketplace</div>
+                            <div class="pull-right">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            <div class="popup-demo-content">
+                                <div class="popoup-private-seller-img"></div>
+                                <p>Enter your recipient emails below</p>
+                                <p>(Use commas separate multiple recipients).</p>
+                                <textarea placeholder="e.g: seller1@email.com, seller2@email.com"></textarea>
+                            </div>
+                            <div class="popup-footer">
+                                <input class="mybtn btn-blue" type="button" value="Send" data-dismiss="modal">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="InviteSeller" class="popup popup-demo-seller in">
+                        <div class="popup-wrapper">
+                            <div class="popup-body">Invite your sellers to onboard on your private marketplace</div>
+                            <div class="pull-right">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            <div class="popup-demo-content">
+                                <div class="popoup-private-seller-img"></div>
+                                <p>Enter your recipient emails below</p>
+                                <p>(Use commas separate multiple recipients).</p>
+                                <textarea placeholder="e.g: seller1@email.com, seller2@email.com"></textarea>
+                            </div>
+                            <div class="popup-footer">
+                                <input class="mybtn btn-blue" type="button" value="Send" data-dismiss="modal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade model-img-crop" id="myModal" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="modaldialog" class="html5imageupload" data-download="true"
+                                        data-save="false" data-resize="true" data-width="1200" data-height="800"
+                                        data-url="canvas.php" style="width: 100%;">
+                                        <input type="file" name="thumb" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Seller popup-->
+                    <div id="StartSelling" class="popup popup-start-seller">
+                        <div class="popup-wrapper">
+                            <div class="pull-right">
+                                <a href="javascript:void(0)" class="close-popup" 
+                                    data-dismiss="modal"><i class="icon icon-close"></i> </a>
+                            </div>
+                            <div class="popup-demo-content text-center">
+                                <p class="">You will be brought to another page to access these features. Press okay to
+                                    continue!</p>
+                                <div class="fancy-checkbox"><label> <input type="checkbox" name="dont-show" value="1" />
+                                        Don’t show me this again</label></div>
+                            </div>
+                            <div class="popup-footer">
+                                <a href="#" class="mybtn btn-grey" data-dismiss="modal">Cancel</a>
+                                <a href="https://bootstrap.arcadier.com/marketplace/seller_items.html"
+                                    class="mybtn btn-blue">Okay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Start Seller popup-->
+                    
+                    <div id="cover"></div>
+                    <div id="coverdark"></div>
+
+                    <!-- Link Stripe Save cofirm popop-->
+                    <div class="popup popup-save-confirm" id="link-stripe-account">
+                        <div class="popup-wrapper">
+                            <div class="popup-body">
+                                <div align="center">
+                                    <h2 class="red-bold">Warning! </h2>
+                                </div>
+                                <div class="text-center content-text">Changing this value will affect all the weight
+                                    units on<br>your marketplace.</div>
+                            </div>
+                            <div class="popup-footer text-center">
+                                <input onclick="popupConfirm_close('link-stripe-account');" class="mybtn btn-grey"
+                                    type="button" value="Cancel" name="cancel">
+                                <input onclick="popupConfirm_ok();" class="mybtn btn-blue" type="button" value="Okay"
+                                    name="cancel">
+                            </div>
+                            <a href="javascript:void(0)" class="close-popup"
+                                onclick="popupConfirm_close('link-stripe-account');"><i class="icon icon-close"></i>
+                            </a>
+                        </div>
+                    </div>
+                   
+                    <div class="popup-area popup-confirm-opt" id="popupConfirmOpt">
+                        <div class="wrapper">
+                            <div class="content-area text-center">
+                                <p><strong class="text text-danger">Warning!</strong> This will change how the rates
+                                    are calculated</p>
+                                <br>
+                            </div>
+                            <div class="btn-area text-center">
+                                <input onclick="popupConfirmAction('save')" class="my-btn btn-black" type="button"
+                                    value="Okay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript">
+        function readURL1(input1) {
+
+
+            if (input1.files && input1.files[0]) {
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+
+                    var container = jQuery(".private-setting-marketplace-logo");
+
+                    container.html('');
+
+                    var pImage = "<img src=" + e.target.result + " alt='image'>";
+
+                    container.append(pImage);
+
+                    jQuery(".browse-control-logo [name=file_name1]").val(input1.files[0]['name']);
+
+                }
+
+                reader.readAsDataURL(input1.files[0]);
+
+            }
+
+        }
+
+        function readURL2(input) {
+
+            if (input.files && input.files[0]) {
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+
+
+                    jQuery(".browse-control-background [name=file_name2]").val(input.files[0]['name']);
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+
+            }
+
+        }
+
+        jQuery("#myModal").on('shown.bs.modal', function () {
+            jQuery('#modaldialog').html5imageupload({});
+        });
+
+        /*fixed canvas size issue while edit*/
+        jQuery("#myModal").on('show.bs.modal', function () {
+            jQuery(window).resize('trigger');
+
+        });
+
+        jQuery('.model-img-crop a.download').attr('data-dismiss', 'modal');
+
+        jQuery('body').on('click', '.model-img-crop .download', function () {
+
+            var src = jQuery(this).attr('href');
+
+            var name = jQuery(this).attr('download');
+
+            jQuery(".browse-control input[name='file_name']").val(name);
+
+            jQuery(".cover-photo.bg-image-photo").html('');
+
+            jQuery(".cover-photo.bg-image-photo").append("<img src=" + src + " alt=" + name + ">");
+
+            jQuery("#myModal").modal("hide")
+
+            return false;
+
+        });
+
+        $(document).ready(function () {
+
+            $("#btnSavePrivateSetting").click(function () {
+                $(".private-setting-body1").css("display", "none");
+                $(".private-setting-body2").css("display", "block");
+            });
+
+            $('.private-setting-click').click(function () {
+
+                $(".private-setting-click.active").removeClass("active");
+
+                $(".private-setting-click span.set-tick-check").removeClass("set-tick-check");
+
+                $(this).addClass('active');
+
+                $(this).find("span").addClass("set-tick-check");
+
+            });
+            $(".btn-configure").click(function () {
+
+                $(".private-setting-body1").css("display", "block");
+
+                $(".private-setting-body2").css("display", "none");
+            });
+
+        });
+
+        function hide_image_popup() {
+            jQuery("#coverdark").fadeOut();
+            jQuery("#large_image_popup").fadeOut();
+        }
+
+        $('ul.layout-tabs li').click(function () {
+
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.layout-tabs li').removeClass('layout-current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('layout-current');
+            $("#" + tab_id).addClass('current');
+        })
+
+        jQuery.tablesorter.addParser({
+            // set a unique id
+            id: 'dcurrency',
+            is: function (s) {
+                // return false so this parser is not auto detected
+                return false;
+            },
+            format: function (s) {
+                // format your data for normalization 
+                return s.replace(/[^0-9\.]+/g, ").replace(/,/g, ");
+            },
+            // set type, either numeric or text
+            type: 'decimal'
+        });
+
+        $("#merchants-tables").tablesorter({
+            headers: {
+                4: {
+                    sorter: 'dcurrency'
+                }
+            },
+        });
+        
+
+        $("#buyers-tables").tablesorter({
+            headers: {
+                4: {
+                    sorter: 'dcurrency'
+                }
+            },
+        });
+
+        $("#time-based-tables").tablesorter({
+            headers: {
+                4: {
+                    sorter: 'dcurrency'
+                }
+            },
+        });
+
+        jQuery(window).bind('scroll', function () {
+            jQuery(".sidebar").getNiceScroll().resize();
+        });
+
+        jQuery(".mobi-header .navbar-toggle").click(function (e) {
+            e.preventDefault();
+            jQuery("body").toggleClass("sidebar-toggled");
+        });
+
+        jQuery(".navbar-back").click(function () {
+            jQuery(".mobi-header .navbar-toggle").trigger('click');
+        });
+
+
+
+        /*nice scroll */
+        jQuery(".sidebar").niceScroll({
+            cursorcolor: "#000",
+            cursorwidth: "6px",
+            cursorborderradius: "5px",
+            cursorborder: "1px solid transparent",
+            touchbehavior: true
+        });
+
+        jQuery(".sidebar .section-links li > a").click(function () {
+            jQuery(".sidebar .section-links li").removeClass('active');
+            jQuery(this).parents('li').addClass('active');
+        });
+
+        $(document).ready(function () {
+            var watermark = 'Members Only';
+            $('.txt-watermark').val(watermark).addClass('watermark');
+
+            $('.txt-watermark').blur(function () {
+                if ($(this).val().length == 0) {
+                    $(this).val(watermark).addClass('watermark');
+                }
+            });
+            $('.txt-watermark').focus(function () {
+                if ($(this).val() == watermark) {
+                    $(this).val('').removeClass('watermark');
+                }
+            });
+            var watermarklink = 'www.example.com';
+            $('.txt-watermark-link').val(watermarklink).addClass('watermark');
+
+            $('.txt-watermark-link').blur(function () {
+                if ($(this).val().length == 0) {
+                    $(this).val(watermarklink).addClass('txt-watermark-link');
+                }
+            });
+            $('.txt-watermark-link').focus(function () {
+                if ($(this).val() == watermarklink) {
+                    $(this).val('').removeClass('txt-watermark-link');
+                }
+            });
+            $(".page-private-setting .onoffswitch-checkbox").click(function () {
+                if (!$('.page-private-setting .private-setting-switch input[name=onoffswitch]').is(
+                        ':checked')) {
+                    $(".private-setting-container-switch").css("background", "#e8edf0");
+                    $(".private-setting-body1").addClass("hide");
+                    $(".private-setting-body2").addClass("hide");
+                } else {
+                    $(".private-setting-container-switch").css("background", "#fff");
+                    $(".private-setting-body1").removeClass("hide");
+                    $(".private-setting-body2").removeClass("hide");
+                }
+            });
+        });
+        // Struip connect functions
+
+        function popupCoonectStrip_ok() {
+            jQuery("#cover").fadeOut();
+
+            jQuery("#connect-edit-btn").hide();
+            jQuery("#connect-save-btn").show();
+        }
+        // End stripe connect functions
+
+        // Set link stripe functions
+        function popupConfirm_close(closeid) {
+            jQuery("#cover").fadeOut();
+            jQuery("#" + closeid).fadeOut();
+        }
+
+        function popupConfirm_ok() {
+            jQuery("#cover").fadeOut();
+            jQuery("#link-stripe-account").fadeOut();
+
+            jQuery("#unit_force").prop("readonly", false);
+            jQuery("#edit-btn").hide();
+            jQuery("#save-btn").show();
+        }
+
+        function MakeUneditable() {
+            var e = false;
+            jQuery("#unit_force.required").each(function () {
+                var val = jQuery(this).val();
+                var attr = jQuery(this).attr('id');
+                if (jQuery.trim(val) == '') {
+                    e = true;
+                    jQuery(this).addClass('error-con');
+                }
+
+            });
+            if (!e) {
+                jQuery("#unit_force").prop("readonly", true);
+                jQuery("#save-btn").hide();
+                jQuery("#edit-btn").show();
+            }
+
+        }
+
+        function SaveConfirm() {
+            var e = false;
+            jQuery("#unit_force .required").each(function () {
+                var val = jQuery(this).val();
+                var attr = jQuery(this).attr('id');
+                if (jQuery.trim(val) == '') {
+                    e = true;
+                    jQuery(this).addClass('error-con');
+                }
+
+            });
+            if (!e) {
+                jQuery("#cover").fadeIn();
+                jQuery("#link-stripe-account").fadeIn();
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://bootstrap.arcadier.com/adminportal/js/custom-nicescroll.js"></script>
+    <script type="text/javascript">
+        function popupConfirmAction(action) {
+            var $popup = $('#popupConfirmOpt');
+            var $cover = $('#cover');
+            switch (action) {
+                case 'save':
+                    $('.option_box input[type="radio"].active').trigger('click');
+                    $popup.fadeOut();
+                    $cover.fadeOut();
+                    break;
+                default:
+                    $('.option_box input[type="radio"]').removeClass('active');
+                    $popup.fadeOut();
+                    $cover.fadeOut();
+            }
+            $('.option_box input[type="radio"]').removeClass('active');
+        }
+
+        function saveDeliveryRate() {
+            var $section = $('.section-add-delivery-rate');
+            var $rate_name = $section.find('input[name=rate_name]');
+            var $range_start = $section.find('input[name=range_start]');
+            var $range_end = $section.find('input[name=range_end]');
+            var $rate_cost = $section.find('input[name=rate_cost]');
+            var onwards = $section.find('#Onwards').is(":checked") ? true : false;
+            var error = false;
+            var getLastRangeVal = $(".list-body > .list_row:last-child() .added_range").attr("data-last-val");
+            var range_start = parseFloat($range_start.val()).toFixed(2);
+            var range_end = parseFloat($range_end.val()).toFixed(2);
+            var $val_onwards = $section.find('#input_onwards');
+
+            if (!$.trim($rate_name.val())) {
+                $rate_name.addClass('error-con');
+                error = true;
+            }
+
+            if (!onwards) {
+                if (!$.trim($range_start.val())) {
+                    $range_start.addClass('error-con');
+                    error = true;
+                }
+
+                if (!$.trim($range_end.val())) {
+                    $range_end.addClass('error-con');
+                    error = true;
+                }
+
+                if (!$.trim($rate_cost.val())) {
+                    $rate_cost.addClass('error-con');
+                    error = true;
+                }
+
+                var errorLowerValue = '';
+                $('.range-box .text').remove();
+                if ($.trim($range_start.val())) {
+                    if (Number($.trim($range_start.val())) <= Number(getLastRangeVal)) {
+                        error = true;
+                        errorLowerValue = $('.range-box').append(
+                            '<div class="text text-danger">Cannot be smaller than or equal to last value ' +
+                            getLastRangeVal + '</div>');
+                        errorLowerValue;
+                    }
+                    if ($.trim($range_end.val()) && $.trim($range_start.val()) && errorLowerValue == '') {
+                        var range_x = parseFloat($range_start.val());
+                        var range_y = parseFloat($range_end.val());
+                        if (range_y <= range_x) {
+                            error = true;
+                            $('.range-box').append('<div class="text text-danger">Cannot be smaller than or equal to ' +
+                                range_x + '</div>');
+                        }
+                    }
+                }
+            } else {
+                if (!$.trim($val_onwards.val())) {
+                    $val_onwards.addClass('error-con');
+                    error = true;
+                }
+                if ($.trim($val_onwards.val())) {
+                    if (!$.trim($rate_cost.val())) {
+                        $rate_cost.addClass('error-con');
+                        errorCon = true;
+                    } else if (Number($.trim($val_onwards.val())) <= Number(getLastRangeVal)) {
+                        error = true;
+                        $('.range-box').append(
+                            '<div class="text text-danger">Cannot be smaller than or equal to last value ' +
+                            getLastRangeVal + '</div>');
+                    } else {
+                        $("#btnSaveDeliveryRate").addClass("not-allowed");
+                        $(".grey_fill_box > .edit_fill_form_grey").addClass("disabled");
+                        $(".grey_fill_box > .edit_fill_form_grey .range-box .text-danger").remove();
+                        $(".grey_fill_box > .edit_fill_form_grey").prepend(
+                            "<div class='text text-danger'>Unable to add new calculation if latest is set to 'onwards'</div>"
+                            );
+                    }
+                }
+            }
+
+            if (!$.trim($rate_cost.val())) {
+                $rate_cost.addClass('error-con');
+                error = true;
+            }
+
+
+            if (!error) {
+                var range = range_start + ' - ' + range_end;
+                if (onwards) {
+                    range = '> ' + parseFloat($.trim($val_onwards.val())).toFixed(2) + ' onwards';
+                }
+                var template =
+                    `<div class="list_row">
+                        <div class="col-md-4">
+                            <p>` +
+                    $.trim($rate_name.val()) +
+                    `</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="added_range" data-last-val=` + range_end + `>
+                                <p>` + range + `</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <p>SGD $` +
+                    parseFloat($.trim($rate_cost.val())).toFixed(2) +
+                    `</p>
+                            <div class="item-actions">
+                                <ul>
+                                    <li><a href="javascript:void(0)" onclick="DeleteCustomMethod(this)"><i class="icon icon-delete"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>`;
+                $('.take_data_edit_list .list-body > .list_row:last-child() .item-actions').remove();
+                $('.take_data_edit_list .list-body').append(template);
+                $rate_name.val('');
+                $range_start.val('');
+                $range_end.val('');
+                $rate_cost.val('');
+                $val_onwards.val('');
+                $section.slideUp();
+                $(".edit_fill_form_grey > form input").removeClass("error-con");
+                $(".element-onwards").addClass("hide");
+            }
+        }
+        $(window).load(function () {
+            dynmic_align();
+            $(window).resize(function () {
+                dynmic_align();
+            });
+        });
+
+        function confirm_remove(ele) {
+            jQuery('.list-body .list_row.confirm-delete').remove();
+            cancel_remove(ele);
+            $(".grey_fill_box > .edit_fill_form_grey").removeClass("disabled");
+            $(".grey_fill_box > .edit_fill_form_grey .text-danger").remove();
+            $(".grey_fill_box > .edit_fill_form_grey .range-box .text-danger").remove();
+
+            var $append = '<div class="item-actions">' +
+                '<ul>' +
+                '<li><a href="javascript:void(0)" onclick="DeleteCustomMethod(this)"><i class="icon icon-delete"></i></a></li>' +
+                '</ul>' +
+                '</div>';
+            $('.take_data_edit_list .list-body > .list_row:last-child() > .col-md-4:last-child()').append($append);
+
+        }
+
+        function cancel_remove(ele) {
+            var that = jQuery(ele);
+            jQuery(".popup-area.item-remove-popup").fadeOut();
+            jQuery("#cover").fadeOut();
+            jQuery('.list-body .list_row').removeClass('confirm-delete');
+        }
+
+        function DeleteCustomMethod(obj) {
+            jQuery("#cover").fadeIn();
+            jQuery(".popup-area.item-remove-popup").fadeIn();
+            jQuery(obj).parents('.list_row').addClass('confirm-delete');
+        }
+
+        jQuery(document).ready(function () {
+
+            jQuery('.btn-add-delivery-rate').click(function () {
+                jQuery('.section-add-delivery-rate').slideToggle();
+                jQuery(this).toggleClass("line");
+            });
+
+            $("body").on("change", "#Onwards", function () {
+                if ($(this).is(":checked")) {
+                    $(".range-b").removeClass('hide');
+                    $(".range-a").addClass('hide');
+                } else {
+                    $(".range-b").addClass('hide');
+                    $(".range-a").removeClass('hide');
+                }
+            });
+
+            jQuery("#mobi-search").click(function () {
+                jQuery(".search-bar").slideToggle();
+                if (jQuery("#mobile-menu").is(":visible")) {
+                    jQuery("#mobile-menu").hide();
+                }
+                if (jQuery(".category-menu").is(":visible")) {
+                    jQuery(".category-menu").hide();
+                }
+            });
+
+            /*nice scroll */
+            jQuery("#mobile-menu > ul").niceScroll({
+                cursorcolor: "aquamarine",
+                cursorwidth: "2px",
+                background: "rgba(20,20,20,0.3)",
+                cursorborder: "1px solid aquamarine",
+                cursorborderradius: 0,
+                touchbehavior: true
+            });
+
+            jQuery("#menu-toggle").click(function () {
+                var target = jQuery(".category-items");
+                var parent = jQuery(".category-menu");
+                jQuery(parent).show();
+                jQuery(target).slideToggle();
+                if (jQuery("#mobile-menu").is(":visible")) {
+                    jQuery("#mobile-menu").hide();
+                }
+            });
+
+            $('.option_box input[type="radio"]').click(function () {
+                if ($('.option_box input[type="radio"]').hasClass('active')) {
+                    if ($(this).attr('id') == 'price') {
+                        $("span.unit_area").html("SGD $");
+                    } else {
+                        $("span.unit_area").html("kg");
+                    }
+                } else {
+                    $('#popupConfirmOpt').fadeIn();
+                    $('#cover').fadeIn()
+                    $(this).addClass('active');
+                }
+
+            });
+            $('.weight_option input[type="text"]').on("change", function () {
+                var unit = $(this).val();
+                $("span.unit_area").html(unit);
+            });
+            $('.range-box input[type="checkbox"]').click(function () {
+                if ($(this).prop("checked") == true) {
+                    $(this).parents(".range-box").find('.txt.sort ').addClass("infinity").attr({
+                        disabled: "disabled",
+                        placeholder: " ∞ "
+                    });
+
+                } else {
+                    $(this).parents(".range-box").find('.txt.sort ').removeClass("infinity").removeAttr(
+                        "disabled").attr("placeholder", "0.00");
+
+                }
+            });
+
+
+            $(".onErr").on("click", function () {
+                $(".err_msg").css("display", "block");
+            });
+
+        });
+        $(function () {
+            // initialize sol
+            $('#my-select').searchableOptionList();
+        });
+
+
+        function dynmic_align() {
+            $(".list_row .added_range").each(function () {
+                var reporting = $(this).height();
+                var height = $(".delivery-options .boxed_layout .item-actions").height();
+                var padAmount = (reporting / 2) - (height / 2);
+                $(this).next(".delivery-options .boxed_layout .item-actions").css('padding-top', padAmount);
+            });
+        }
+
+        $('.address_selection input[type="radio"]').click(function () {
+            $(".adderes_box").removeClass("selected");
+            $(this).next(".adderes_box").addClass("selected");
+        });
+
+
+        $(document).ready(function () {
+            $('.custom-field-infos h2').click(function(e) {
+                $('.custom-field-infos h2 span').toggleClass('up');
+                if(!$('.custom-field-infos h2 span').hasClass('up')){
+                    $('.custom-field-infos h2 span').removeClass('up');
+                    $(".custom-field-infos h2 span img").attr("src","./images/chevron_black_down.svg");
+                    $('.custom-field-control').css({ display: "none" });
+                }else {
+                    $('.custom-field-infos h2 span').addClass('up');
+                    $(".custom-field-infos h2 span img").attr("src","./images/chevron_black_up.svg");
+                    $('.custom-field-control').css({ display: "block" });
+                };
+            e.preventDefault();
+            });
+            $('.btn_delete_act').click(function(){  
+
+            $('#DeleteCustomMethod').show();
+
+            $('#cover').show();
+
+            });
+
+
+
+            $('#popup_btnconfirm').click(function(){  
+
+                $('#DeleteCustomMethod').hide();
+
+                $('#cover').hide();
+
+            });
+
+
+
+            $('#popup_btncancel,.close-popup').click(function(){  
+
+                $('#DeleteCustomMethod').hide();
+
+                $('#cover').hide();
+
+            });         
+        });
+     
+    </script>
+</div>
+</body>
 </html>

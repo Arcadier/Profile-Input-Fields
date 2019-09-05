@@ -1,0 +1,394 @@
+
+.page-user-custom-fields .page-header .page-icon .icon.report-icon {
+    background-image: url(../images/user_custom_fields.svg);
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    margin-top: 0px !important;
+}
+.page-user-custom-fields .page-content-top .icon-3x.report-icon-big {
+    background-image: url(../images/icons/user_custom_fields.png);
+    margin-right: 31px;
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 50px;
+}
+.page-user-custom-fields .page-header .page-title {
+    vertical-align: middle;
+}
+
+.page-user-custom-fields .page-content-top .icon-3x.field-icon-big {
+    background-image: url(../images/user_custom_fields.svg);
+    margin-right: 31px;
+    background-repeat: no-repeat;
+    width: 60px;
+    /* height: auto; */
+    background-size: contain;
+}
+
+.page-user-custom-fields .page-content-top.field-icon {
+    border-bottom: 1px solid #4d4d4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+.page-user-custom-fields .field-icon p {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4d4d;
+}
+
+.page-user-custom-fields .custom-field-infos h2 {
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4d4d;
+    cursor: pointer;
+}
+
+.page-user-custom-fields .custom-field-infos h2 img{
+    margin-right: 31px;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    background-size: contain;
+    margin-left: 14px;
+    margin-top: -4px;
+}
+
+
+.page-user-custom-fields .custom-field-infos .icon-3x.field-arrow-icon-big{
+    background-image: url(../images/chevron_black_up.svg);
+    margin-right: 31px;
+    background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    background-size: contain;
+    margin-left: 14px;
+    margin-top: -4px;
+}
+
+.page-user-custom-fields .custom-field-infos {
+    padding: 15px 25px;
+}
+
+.page-user-custom-fields .custom-field-containers{
+    display: flex;
+}
+
+.page-user-custom-fields .custom-field-infos .custom-field-title {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4d4d4d;
+    max-width: 95px;
+    width: 100%;
+}
+
+.page-user-custom-fields .custom-field-infos .custom-field-description {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #999999;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table {
+    margin-bottom: 0px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>thead>tr>th:first-child {
+    padding-left: 30px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>thead>tr>th:last-child {
+    padding-left: 25px;
+    padding-right: 30px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>thead>tr>th {
+    background-color: #3b3f46;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.1px;
+    border-bottom: 0px solid #ddd;
+    padding: 10px 8px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>tbody>tr>td:first-child {
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.12px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>tbody>tr>td:last-child {
+    padding-right: 30px;
+}
+
+.page-user-custom-fields .page-content-pagination-page .table>tbody>tr>td {
+    color: #4d4d4d;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.1px;
+    border-bottom: solid 1px #d0d0d0;
+    padding: 10px 8px;
+    vertical-align: middle;
+}
+
+.page-user-custom-fields .page-content-top .custom-code {
+    margin: 0 auto;
+    display: block;
+    width: auto;
+    margin-right: 0px;
+}
+
+.page-user-custom-fields .custom-code .bl_btn {
+    width: auto;
+    height: auto;
+    padding: 10px 29px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.page-user-custom-fields .page-content .dropdown {
+
+    width: 165px;
+    float: left;
+
+}
+
+.page-user-custom-fields .page-content .dropdown button {
+    position: relative;
+    border-radius: 0;
+    width: 165px;
+    text-align: left;
+    height: 42px;
+    border-color: transparent;
+    background: #f0f0f0;
+}
+
+.page-user-custom-fields .page-content .dropdown button .selected-display {
+    color: #c7c7c7;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+}
+
+.page-user-custom-fields .page-content .dropdown button .selected-focus {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+    color: #4d4d4d;
+}
+
+.page-user-custom-fields .page-content .dropdown button .carat {
+    background: transparent;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-user-custom-fields .page-content .dropdown button .carat img {
+    width: 12px;
+}
+
+.page-user-custom-fields .page-content .dropdown .dropdown-menu {
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+    padding: 2px;
+    max-width: 225px;
+}
+
+.page-user-custom-fields .page-content .dropdown .dropdown-menu li {
+    display: block;
+}
+
+.page-user-custom-fields .page-content .dropdown .dropdown-menu>li>a {
+    padding: 10px 10px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: 0.12px;
+    color: #4d4d4d;
+}
+
+.page-user-custom-fields .page-content .dropdown .dropdown-menu>li>a:hover, .page-user-custom-fields .page-content .dropdown .dropdown-menu>li>a:focus {
+    background: #50c8ff;
+    color: #ffffff;
+}
+
+.page-user-custom-fields .icon.icon-edit {
+    background-image: url(../images/edit-btn.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin-right: 0;
+    margin-left: 25px;
+}
+
+.page-user-custom-fields .icon.icon-edit-save {
+    background-image: url(../images/edit_btn_black_circle.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    margin-left: 25px;
+    margin-right: 0px;
+}
+
+.page-user-custom-fields .icon.icon-delete {
+    background: url(../images/delete_btn.svg) no-repeat 0 0;
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    background-size: auto;
+    background-position: center;
+    margin-left: 25px;
+}
+
+.page-user-custom-fields .icon.icon-enable {
+    background: url(../images/blue_white_tick.svg) no-repeat 0 0;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    background-size: auto;
+    background-position: center;
+    margin-left: 25px;
+}
+
+.page-user-custom-fields .field-name {
+    max-width: 273px;
+    width: 100%;
+}
+
+.page-user-custom-fields .dropdown-options {
+    max-width: 304px;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    word-break: break-word;
+}
+
+.page-user-custom-fields .custom-field-control {
+    margin-top: 10px;
+}
+
+.page-user-custom-fields .btn-black-mdx {
+    background-color: #4d4d4d;
+    height: 40px;
+    width: 140px;
+    max-width: 100%;
+    color: #fff;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.page-user-custom-fields .popup.popup-delete-confirm {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 10px 15px 25px !important;
+}
+
+.page-user-custom-fields .popup-delete-confirm .content-area {
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.page-user-custom-fields .btn-area {
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.page-user-custom-fields .popup-delete-confirm .btn-black-mdx, .popup-delete-confirm .btn-blue {
+    vertical-align: middle;
+    border-radius: 0;
+}
+
+.page-user-custom-fields .fancy-checkbox {
+    float: left;
+}
+
+.page-user-custom-fields .fancy-checkbox label {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-size: contain;
+    margin-left: 25px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.page-user-custom-fields .fancy-checkbox input[type="checkbox"] + label {
+    background-image: url(../images/white_tick.svg);
+    border: 1px solid #c2c2c2;
+}
+
+.page-user-custom-fields .fancy-checkbox input[type="checkbox"]:checked + label {
+    background-image: url(../images/blue_white_tick.svg);
+    border: 0px solid #c2c2c2;
+}
+
+.page-user-custom-fields .field-options {
+    display: flex;
+    align-items: center;
+}
+
+.visible {
+    display: block;
+}
+
+.invisible {
+    display: none;
+}

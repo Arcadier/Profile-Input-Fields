@@ -1,4 +1,6 @@
-var packageId = "e45bebc6-6f02-426e-ae75-ab1228e6cd38";
+var packageIdUCF = document.currentScript.src.replace('/scripts/scripts.js','').trim().split('/');
+packageIdUCF = packageIdUCF[(packageIdUCF).length-1];
+console.log(packageIdUCF);
 $(document).ready(function() {
   var pageUrl = window.location.href;
   if (pageUrl.indexOf("admin/usermanager/userdetail") != -1) {
@@ -81,7 +83,7 @@ function returnSavedUserData(userId, customTableName) {
       "https://" +
       baseUrl +
       "/api/v2/plugins/" +
-      packageId +
+      packageIdUCF +
       "/custom-tables/" +
       customTableName +
       "/",

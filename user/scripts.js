@@ -36,8 +36,9 @@ var baseUrl = document.location.hostname;
  * @constant
  * @type {string}
  */
-var packageId = "e45bebc6-6f02-426e-ae75-ab1228e6cd38";
-
+var packageIdUCF = document.currentScript.src.replace('/scripts/scripts.js','').trim().split('/');
+packageIdUCF = packageIdUCF[(packageIdUCF).length-1];
+console.log(packageIdUCF);
 $(document).ready(function() {
   // checks if the page is right by checking against the body's class
   if (
@@ -269,7 +270,7 @@ function getCustomTable(customTableName) {
       "https://" +
       baseUrl +
       "/api/v2/plugins/" +
-      packageId +
+      packageIdUCF +
       "/custom-tables/" +
       customTableName +
       "/",
@@ -305,7 +306,7 @@ function returnSavedUserData(userId, customTableName) {
       "https://" +
       baseUrl +
       "/api/v2/plugins/" +
-      packageId +
+      packageIdUCF +
       "/custom-tables/" +
       customTableName +
       "/",
@@ -320,6 +321,7 @@ function returnSavedUserData(userId, customTableName) {
   // making the ajax call and assigning the first record, which by logic should be the only record found
   $.ajax(settings).done(function(response) {
     res = response.Records[0];
+    console.log("returned row", res);
   });
   return res;
 }
@@ -342,7 +344,7 @@ function addRowCustomTable(userId, inputJson, customTableName) {
       "https://" +
       baseUrl +
       "/api/v2/plugins/" +
-      packageId +
+      packageIdUCF +
       "/custom-tables/" +
       customTableName +
       "/rows",
@@ -353,7 +355,9 @@ function addRowCustomTable(userId, inputJson, customTableName) {
     data: JSON.stringify(data)
   };
   // making the api call with the required settings
-  $.ajax(settings);
+  $.ajax(settings).done(function(){
+    console.log("added new row");
+  });
 }
 
 /**
@@ -373,7 +377,7 @@ function editRowCustomTable(rowId, inputJson, customTableName) {
       "https://" +
       baseUrl +
       "/api/v2/plugins/" +
-      packageId +
+      packageIdUCF +
       "/custom-tables/" +
       customTableName +
       "/rows/" +
@@ -385,5 +389,7 @@ function editRowCustomTable(rowId, inputJson, customTableName) {
     data: JSON.stringify(data)
   };
   // making the ajax call
-  $.ajax(settings);
+  $.ajax(settings).done(function(){
+    console.log("editted old row");
+  });
 }

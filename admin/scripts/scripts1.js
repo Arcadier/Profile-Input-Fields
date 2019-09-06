@@ -249,7 +249,6 @@ function addRow(
         <div class="field-options">
             <input type="checkbox" id="option${number}" ${checkbox} /><label for="option${number}" ></label>
             <a href="#"><i class="icon repogram icon-edit"></i></a>
-            <a href="#" class="btn_delete_act"><i class="icon icon-delete"></i></a>
         </div>
     </td>
 </tr>`;

@@ -7,7 +7,7 @@
     margin-top: 0px !important;
 }
 .page-user-custom-fields .page-content-top .icon-3x.report-icon-big {
-    background-image: url(../images/icons/user_custom_fields.png);
+    background-image: url(https://bootstrap.arcadier.com/github/Custom%20field.png);
     margin-right: 31px;
     background-repeat: no-repeat;
     width: 52px;
@@ -18,7 +18,7 @@
 }
 
 .page-user-custom-fields .page-content-top .icon-3x.field-icon-big {
-    background-image: url(../images/user_custom_fields.svg);
+    background-image: url(https://bootstrap.arcadier.com/github/Custom%20field.png);
     margin-right: 31px;
     background-repeat: no-repeat;
     width: 60px;

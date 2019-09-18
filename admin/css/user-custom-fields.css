@@ -392,3 +392,18 @@
 .invisible {
     display: none;
 }
+
+.btn-info-plug-in {
+    color: #f35757;
+    display: block;
+    height: 30px;
+    text-align: right;
+    width: 190px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Open Sans';
+}
+
+.float {
+    float: right;
+}

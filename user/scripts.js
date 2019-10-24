@@ -36,8 +36,11 @@ var baseUrl = document.location.hostname;
  * @constant
  * @type {string}
  */
-var packageIdUCF = document.currentScript.src.replace('/scripts/scripts.js','').trim().split('/');
-packageIdUCF = packageIdUCF[(packageIdUCF).length-1];
+var packageIdUCF = document.currentScript.src
+  .replace("/scripts/scripts.js", "")
+  .trim()
+  .split("/");
+packageIdUCF = packageIdUCF[packageIdUCF.length - 1];
 console.log(packageIdUCF);
 $(document).ready(function() {
   // checks if the page is right by checking against the body's class
@@ -51,9 +54,9 @@ $(document).ready(function() {
     var parentElement = settingsTable.children[0];
     // retrieving the stored fields settings of the columns and parsing the stringified JSON
     var retrieved = JSON.parse(returnCustomField("metacfdata").Values[0]);
-    // pushing in all enabled field settings into fields
+    // pushing in all enabled and not deleted field settings into fields
     for (key in retrieved) {
-      if (retrieved[key].enable) {
+      if (retrieved[key].enable && !retrieved[key].deleted) {
         fields.push(retrieved[key]);
       }
     }
@@ -355,7 +358,7 @@ function addRowCustomTable(userId, inputJson, customTableName) {
     data: JSON.stringify(data)
   };
   // making the api call with the required settings
-  $.ajax(settings).done(function(){
+  $.ajax(settings).done(function() {
     console.log("added new row");
   });
 }
@@ -389,7 +392,7 @@ function editRowCustomTable(rowId, inputJson, customTableName) {
     data: JSON.stringify(data)
   };
   // making the ajax call
-  $.ajax(settings).done(function(){
+  $.ajax(settings).done(function() {
     console.log("editted old row");
   });
 }

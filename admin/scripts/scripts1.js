@@ -1,6 +1,7 @@
 var totalRows;
 var metaData;
 var metaCustomField;
+var delNumber;
 var rowTypeCorrecter = {
   checkbox: "Checkbox",
   string: "Text",
@@ -83,7 +84,10 @@ function addEditFieldListener(number) {
           } else {
             rowJson.options = fieldOptions.split(",");
           }
-          metaData["row" + (number + 1)] = rowJson;
+          metaData["row" + (number + 1)].enable = rowJson.enable;
+          metaData["row" + (number + 1)].name = rowJson.name;
+          metaData["row" + (number + 1)].type = rowJson.type;
+
           createCfImplementations("metacfdata", metaData, metaCustomField);
           $(".field" + number + " .field-name").removeClass("visible");
           $(".field" + number + " .field-name").addClass("invisible");
@@ -198,9 +202,11 @@ function addRow(
   name,
   type,
   enabled,
+  deleted,
   newField = false,
   dropdownOptions = false
 ) {
+  console.log("kill me");
   var highlighted = "selected-focus";
   var checkbox = "";
   if (newField) {
@@ -218,8 +224,12 @@ function addRow(
   } else {
     dropdownOptions = dropdownOptions.join(",").replace(/, /g, ",");
   }
+  var hide = "";
+  if (deleted) {
+    hide = "hide";
+  }
   console.log("input dropdown options", dropdownOptions);
-  var rowString = `<tr class="field${number}">
+  var rowString = `<tr class="field${number} ${hide}">
     <td>
         <span class="current-label visible">${name}</span>
         <input type="text" class="field-name invisible" name="" value="${name}">
@@ -249,6 +259,7 @@ function addRow(
         <div class="field-options">
             <input type="checkbox" id="option${number}" ${checkbox} /><label for="option${number}" ></label>
             <a href="#"><i class="icon repogram icon-edit"></i></a>
+            <a href="#" onclick="setGlobal(${number})" class="btn_delete_act"><i class="icon icon-delete"></i></a>
         </div>
     </td>
 </tr>`;
@@ -269,10 +280,14 @@ function initialRowAdding(customFieldMetaData) {
     var rowType = rowTypeCorrecter[currMeta.type];
     var rowStatus = currMeta.enable;
     var rowOptions = currMeta.options;
+    var deleted = false;
+    if (currMeta.deleted) {
+      deleted = true;
+    }
     if (!rowOptions) {
       rowOptions = false;
     }
-    addRow(count, rowName, rowType, rowStatus, false, rowOptions);
+    addRow(count, rowName, rowType, rowStatus, deleted, false, rowOptions);
 
     count++;
   }
@@ -432,4 +447,14 @@ function createCfImplementations(cfName, storedData, cf) {
       $.ajax(settings3);
     });
   }
+}
+
+function setGlobal(number) {
+  delNumber = number;
+}
+
+function deleteField() {
+  metaData["row" + (delNumber + 1)].deleted = true;
+  $(`.field${delNumber}`).addClass("hide");
+  createCfImplementations("metacfdata", metaData, metaCustomField);
 }

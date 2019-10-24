@@ -70,7 +70,7 @@
                                 <p>Get more information about your users with profile input fields</p>
                             </div>
                             <div class="form-element custom-code">
-                                <button type="button" onclick="saveDeliveryRate();addRow(totalRows,'','','',true)" class="bl_btn">Add Profile Input Field</button>
+                                <button type="button" onclick="saveDeliveryRate();addRow(totalRows,'','','',false,true)" class="bl_btn">Add Profile Input Field</button>
                             </div>
                             
                     </div>
@@ -143,7 +143,7 @@
 
                     <input  type="button" value="Cancel" class="btn-black-mdx " id="popup_btncancel">
 
-                    <input id="popup_btnconfirm" type="button" value="Okay" class="my-btn btn-blue">
+                    <input id="popup_btnconfirm" type="button" value="Okay" class="my-btn btn-blue" onclick="deleteField()">
 
                     <div class="clearfix"></div>
 
